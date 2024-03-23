@@ -7,7 +7,8 @@ from torch import nn
 import torch.nn.functional as F
 import torchtext.vocab as Vocab
 import torch.utils.data as Data
-
+import spacy
+from spacy.tokens import Doc
 PAD, BOS, EOS = '<pad>', '<bos>', '<eos>'  # 序列符
 
 texts = [
@@ -41,5 +42,11 @@ for text in texts:
     process_one_seq(seq_tokens, all_tokens, all_seqs, max_seq_len)
 print(all_tokens)
 print(all_seqs)
-a=collections.Counter(all_tokens)
-print(a)
+nlp = spacy.load("zh_core_web_sm")
+counter=collections.Counter(all_tokens)
+doc = Doc(nlp.vocab, words=list(counter.keys()), spaces=[True]*len(counter))
+
+words = list(counter.keys())
+vocab = [word for word in words if nlp.vocab[word].is_alpha]
+
+print("词汇表:", vocab)
