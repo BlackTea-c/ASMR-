@@ -44,7 +44,7 @@ for token in doc:
 # 处理文本
 doc = nlp("微软准备用十亿美金买下这家英国的创业公司,但是我还是喜欢柚子社的作品，80块包邮到家~")
 
-# 遍历识别出的实体
+# 遍历识别出的实体 doc.ents
 for ent in doc.ents:
     # 打印实体文本及其标注
     print(ent.text, ent.label_)
