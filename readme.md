@@ -2,6 +2,7 @@
 
 # 导入台本即可自动翻译,懂得都懂（手动滑稽
 # 改用CHATGLM2了 用LORA在KAGGLE上很顺利~ 数据集收集一下就可以了！
+# GLM显存要求还是太高了= =
 
 [spacy教程,很友善](https://course.spacy.io/zh/)
 # 制作ing
